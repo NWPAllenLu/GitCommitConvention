@@ -32,7 +32,7 @@ $apiParam = '?q=' . $argv[1];
 
 $apiUrl .= $apiParam;
 
-$result = grabIt($apiUrl, 'POST');
+$result = grabIt($apiUrl, 'GETR');
 
 echo $result;
 
@@ -54,6 +54,9 @@ function grabIt($apiUrl, $request)
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => $request,
+            CURLOPT_HTTPHEADER => [
+                'Cookie: U=c7c9be50ba855fb7c2566f0266a1d7d5ba792931'
+            ],
         ]
     );
 
