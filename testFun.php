@@ -5,10 +5,12 @@
  * 以pchome 24h 爬蟲為例子
  */
 
+$param = $argv[1];
+
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-    CURLOPT_URL => 'https://ecshweb.pchome.com.tw/search/v3.3/all/results?q=帳篷&page=1&sort=rnk/dc',
+    CURLOPT_URL => 'https://ecshweb.pchome.com.tw/search/v3.3/all/results?q=' . $param . '&page=1&sort=rnk/dc',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
