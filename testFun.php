@@ -32,14 +32,14 @@ $apiParam = '?q=' . $argv[1];
 
 $apiUrl .= $apiParam;
 
-$result = grabIt($apiUrl);
+$result = grabIt($apiUrl, 'POST');
 
 echo $result;
 
 /**
  * cURL function
  */
-function grabIt($apiUrl)
+function grabIt($apiUrl, $request)
 {
     $curl = curl_init();
 
@@ -53,7 +53,7 @@ function grabIt($apiUrl)
             CURLOPT_TIMEOUT => 0,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_CUSTOMREQUEST => $request,
         ]
     );
 
