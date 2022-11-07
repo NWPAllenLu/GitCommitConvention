@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 20220711 ALlen init
+ * 20220711 Allen init
  * 以pchome 24h 爬蟲為例子
  */
 
